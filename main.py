@@ -8,12 +8,17 @@ from typing import NoReturn
 import shader_program
 from settings import *
 from shader_program import ShaderProgram
+from scene import Scene
+from player import Player
 
 
 class VoxelEngine:
     def __init__(self) -> None:
         # Pre-definitions
+        self.player = None
         self.shader_program = None
+        self.scene = None
+        #
 
         pg.init()
         pg.display.gl_set_attribute(pg.GL_CONTEXT_MAJOR_VERSION, 3)
@@ -36,10 +41,14 @@ class VoxelEngine:
         self.on_init()
 
     def on_init(self):
+        self.player = Player(self)
         self.shader_program: shader_program.ShaderProgram = ShaderProgram(self)
+        self.scene = Scene(self)
 
     def update(self) -> None:
+        self.player.update()
         self.shader_program.update()
+        self.scene.update()
 
         self.delta_time = self.clock.tick()
         self.time = pg.time.get_ticks() * 0.001
@@ -48,6 +57,7 @@ class VoxelEngine:
 
     def render(self) -> None:
         self.context.clear(color=BG_COLOR)
+        self.scene.render()
         pg.display.flip()
 
     def handle_events(self) -> None:

@@ -2,7 +2,7 @@ import numpy as np
 
 
 class BaseMesh:
-    def __init__(self) -> None:
+    def __init__(self):
         # OpenGL context
         self.context = None
         # shader program
@@ -10,7 +10,7 @@ class BaseMesh:
         # vertex buffer data type format: "3f 3f"
         self.vbo_format = None
         # attribute names according to the format: ("in_position", "in_color")
-        self.attrs: tuple[str, ...] | None = None
+        self.attrs: tuple[str, ...] = None
         # vertex array object
         self.vao = None
 
@@ -20,6 +20,9 @@ class BaseMesh:
         vertex_data = self.get_vertex_data()
         vbo = self.context.buffer(vertex_data)
         vao = self.context.vertex_array(
-            self.program, [(vbo, self.vbo_format, *self.attrs)], skip_errors = True
+            self.program, [(vbo, self.vbo_format, *self.attrs)], skip_errors=True
         )
         return vao
+
+    def render(self):
+        self.vao.render()
