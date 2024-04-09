@@ -1,9 +1,10 @@
 from settings import *
 from meshes.base_mesh import BaseMesh
+from main import VoxelEngine
 
 
 class QuadMesh(BaseMesh):
-    def __init__(self, app):
+    def __init__(self, app: VoxelEngine):
         super().__init__()
 
         self.app = app

@@ -5,11 +5,15 @@ import pygame as pg
 import sys
 from typing import NoReturn
 
-import shader_program
 from settings import *
-from shader_program import ShaderProgram
-from scene import Scene
-from player import Player
+
+# эта строка позволяет импортировать VoxelEngine для типовых аннотаций в других файлах без создания
+# кругового импортирования
+if __name__ == '__main__':
+    import shader_program
+    from shader_program import ShaderProgram
+    from scene import Scene
+    from player import Player
 
 
 class VoxelEngine:
@@ -35,6 +39,7 @@ class VoxelEngine:
         self.clock: pg.time.Clock = pg.time.Clock()
         self.delta_time: int = 0
         self.time: float = 0
+        self.events: list[pygame.event.Event] = []
 
         self.is_running: bool = True
 
@@ -53,7 +58,7 @@ class VoxelEngine:
         self.delta_time = self.clock.tick()
         self.time = pg.time.get_ticks() * 0.001
 
-        pg.display.set_caption(f"{self.clock.get_fps(): .0f}")
+        pg.display.set_caption(f"{str(int(self.clock.get_fps())): <10}{[round(x, 2) for x in self.player.position]}")
 
     def render(self) -> None:
         self.context.clear(color=BG_COLOR)
@@ -61,7 +66,8 @@ class VoxelEngine:
         pg.display.flip()
 
     def handle_events(self) -> None:
-        for event in pg.event.get():
+        self.events = pg.event.get()
+        for event in self.events:
             if event.type == pg.QUIT or (event.type == pg.KEYDOWN and event.key == pg.K_ESCAPE):
                 self.is_running = False
 
