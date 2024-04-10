@@ -3,7 +3,7 @@ import glm
 from settings import *
 
 
-class Camera:
+class Camera:  # free movement camera
     def __init__(self, position, yaw, pitch):
         self.position = glm.vec3(position)
         self.yaw = glm.radians(yaw)
@@ -56,3 +56,23 @@ class Camera:
 
     def move_back(self, velocity):
         self.position -= self.forward * velocity
+
+
+class SpectatorCamera(Camera):  # камера наблюдателя(wasd дают перемещение только в осях xz)
+    def move_left(self, velocity):
+        self.position -= glm.normalize(self.right * glm.vec3(1, 0, 1)) * velocity
+
+    def move_right(self, velocity):
+        self.position += glm.normalize(self.right * glm.vec3(1, 0, 1)) * velocity
+
+    def move_up(self, velocity):
+        self.position += glm.vec3(0, PLAYER_VERTICAL_SPEED, 0) * velocity
+
+    def move_down(self, velocity):
+        self.position -= glm.vec3(0, PLAYER_VERTICAL_SPEED, 0) * velocity
+
+    def move_forward(self, velocity):
+        self.position += glm.normalize(self.forward * glm.vec3(1, 0, 1)) * velocity
+
+    def move_back(self, velocity):
+        self.position -= glm.normalize(self.forward * glm.vec3(1, 0, 1)) * velocity

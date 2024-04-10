@@ -1,7 +1,6 @@
 import pygame as pg
-import pygame.mouse
 
-from camera import Camera
+from camera import SpectatorCamera as Camera
 from settings import *
 from main import VoxelEngine
 
@@ -47,7 +46,7 @@ class Player(Camera):
             self.move_right(vel)
         if key_state[pg.K_a]:
             self.move_left(vel)
-        if key_state[pg.K_q]:
+        if key_state[pg.K_SPACE]:
             self.move_up(vel)
-        if key_state[pg.K_e]:
+        if key_state[pg.K_LSHIFT]:
             self.move_down(vel)
