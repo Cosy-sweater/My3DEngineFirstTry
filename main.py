@@ -14,11 +14,13 @@ if __name__ == '__main__':
     from shader_program import ShaderProgram
     from scene import Scene
     from player import Player
+    from textures import Textures
 
 
 class VoxelEngine:
     def __init__(self) -> None:
         # Pre-definitions
+        self.textures = None
         self.player = None
         self.shader_program = None
         self.scene = None
@@ -46,6 +48,7 @@ class VoxelEngine:
         self.on_init()
 
     def on_init(self):
+        self.textures = Textures(self)
         self.player = Player(self)
         self.shader_program: shader_program.ShaderProgram = ShaderProgram(self)
         self.scene = Scene(self)

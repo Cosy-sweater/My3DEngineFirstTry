@@ -10,7 +10,7 @@ class BaseMesh:
         # vertex buffer data type format: "3f 3f"
         self.vbo_format = None
         # attribute names according to the format: ("in_position", "in_color")
-        self.attrs: tuple[str, ...] = None
+        self.attrs: tuple[str, ...] | None = None
         # vertex array object
         self.vao = None
 
