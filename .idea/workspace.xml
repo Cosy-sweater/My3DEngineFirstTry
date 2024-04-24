@@ -9,11 +9,13 @@
   <component name="ChangeListManager">
     <list default="true" id="ec3f541a-409a-4393-83aa-591f89ebd252" name="Changes" comment="pre_development_checkpoint_5">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/meshes/chunk_mesh.py" beforeDir="false" afterPath="$PROJECT_DIR$/meshes/chunk_mesh.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/meshes/chunk_mesh_builder.py" beforeDir="false" afterPath="$PROJECT_DIR$/meshes/chunk_mesh_builder.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/player.py" beforeDir="false" afterPath="$PROJECT_DIR$/player.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shaders/chunk.frag" beforeDir="false" afterPath="$PROJECT_DIR$/shaders/chunk.frag" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shaders/chunk.vert" beforeDir="false" afterPath="$PROJECT_DIR$/shaders/chunk.vert" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/world.py" beforeDir="false" afterPath="$PROJECT_DIR$/world.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,6 +45,9 @@
     &quot;accountId&quot;: &quot;a7f7e4f6-3368-42c4-bb36-0a3b40b2d9ef&quot;
   }
 }</component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="ProjectErrors" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 0
 }</component>
@@ -73,8 +78,8 @@
       <recent name="C:\Users\belov\PycharmProjects\My3DEngineFirstTry\assets" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\belov\PycharmProjects\My3DEngineFirstTry\meshes" />
       <recent name="C:\Users\belov\PycharmProjects\My3DEngineFirstTry" />
+      <recent name="C:\Users\belov\PycharmProjects\My3DEngineFirstTry\meshes" />
       <recent name="C:\Users\belov\PycharmProjects\My3DEngineFirstTry\world_objects" />
     </key>
   </component>

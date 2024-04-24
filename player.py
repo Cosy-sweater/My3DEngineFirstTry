@@ -1,39 +1,46 @@
 import pygame as pg
-
 from camera import SpectatorCamera as Camera
 from settings import *
-from main import VoxelEngine
 
 
 class Player(Camera):
-    def __init__(self, app: VoxelEngine, position=PLAYER_POS, yaw=-90, pitch=0):
+    def __init__(self, app, position=PLAYER_POS, yaw=-90, pitch=0):
         self.app = app
         super().__init__(position, yaw, pitch)
 
-        self.is_following_mouse = True
+        self.lock_mouse = False
 
     def update(self):
         self.keyboard_control()
         self.mouse_control()
         super().update()
 
+    def handle_event(self, event):
+        # adding and removing voxels with clicks
+        if event.type == pg.MOUSEBUTTONDOWN:
+            voxel_handler = self.app.scene.world.voxel_handler
+            if event.button == 1:
+                voxel_handler.set_voxel()
+            if event.button == 3:
+                voxel_handler.switch_mode()
+
     def mouse_control(self):
         mouse_dx, mouse_dy = pg.mouse.get_rel()
         for event in self.app.events:
             if event.type == pg.MOUSEBUTTONDOWN:
                 if event.button == 3:
-                    self.is_following_mouse = False
+                    self.lock_mouse = False
                     pg.event.set_grab(False)
                     pg.mouse.set_visible(True)
                 if event.button == 1:
-                    self.is_following_mouse = True
+                    self.lock_mouse = True
                     pg.event.set_grab(True)
                     pg.mouse.set_visible(False)
-        if self.is_following_mouse:
+        if self.lock_mouse:
             if mouse_dx:
-                self.rotate_yaw(delta_x=mouse_dx * MOUSE_SENSETIVITY)
+                self.rotate_yaw(delta_x=mouse_dx * MOUSE_SENSITIVITY)
             if mouse_dy:
-                self.rotate_pitch(delta_y=mouse_dy * MOUSE_SENSETIVITY)
+                self.rotate_pitch(delta_y=mouse_dy * MOUSE_SENSITIVITY)
 
     def keyboard_control(self):
         key_state = pg.key.get_pressed()

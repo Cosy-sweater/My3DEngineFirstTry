@@ -6,6 +6,9 @@ import math
 # window resolution
 WIN_RES = glm.vec2(1600, 900)
 
+# ray casting
+MAX_RAY_DIST = 6
+
 # chunk
 CHUNK_SIZE = 32
 H_CHUNK_SIZE = CHUNK_SIZE // 2 - 1
@@ -36,7 +39,7 @@ PLAYER_SPEED = 0.01
 PLAYER_VERTICAL_SPEED = 1.5
 PLAYER_ROT_SPEED = 0.003
 PLAYER_POS = glm.vec3(CENTER_XZ, WORLD_H * CHUNK_SIZE, CENTER_XZ)
-MOUSE_SENSETIVITY = 0.002
+MOUSE_SENSITIVITY = 0.002
 
 # color presets
 BG_COLOR = glm.vec3(0.1, 0.16, 0.25)
