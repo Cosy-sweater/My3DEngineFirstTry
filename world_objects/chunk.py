@@ -1,9 +1,6 @@
-import glm
-from random import randrange
-
 from settings import *
-from main import VoxelEngine
 from meshes.chunk_mesh import ChunkMesh
+import random
 
 
 class Chunk:
@@ -13,10 +10,11 @@ class Chunk:
         self.position = position
         self.m_model = self.get_model_matrix()
         self.voxels: np.array = None
+        self.mesh: ChunkMesh = None
+        self.is_empty = True
 
-        self.mesh: ChunkMesh | None = None
-
-        self.is_empty: bool = True
+        self.center = (glm.vec3(self.position) + 0.5) * CHUNK_SIZE
+        self.is_on_frustum = self.app.player.frustum.is_on_frustum
 
     def get_model_matrix(self):
         m_model = glm.translate(glm.mat4(), glm.vec3(self.position) * CHUNK_SIZE)
@@ -29,8 +27,9 @@ class Chunk:
         self.mesh = ChunkMesh(self)
 
     def render(self):
-        self.set_uniform()
-        self.mesh.render()
+        if not self.is_empty and self.is_on_frustum(self):
+            self.set_uniform()
+            self.mesh.render()
 
     def build_voxels(self):
         # empty chunk
@@ -38,17 +37,20 @@ class Chunk:
 
         # fill chunk
         cx, cy, cz = glm.ivec3(self.position) * CHUNK_SIZE
+        rng = random.randrange(1, 100)
 
         for x in range(CHUNK_SIZE):
+            wx = x + cx
             for z in range(CHUNK_SIZE):
-                wx = x + cx
                 wz = z + cz
                 world_height = int(glm.simplex(glm.vec2(wx, wz) * 0.01) * 32 + 32)
                 local_height = min(world_height - cy, CHUNK_SIZE)
 
                 for y in range(local_height):
                     wy = y + cy
-                    voxels[x + CHUNK_SIZE * z + CHUNK_AREA * y] = randrange(1,  100)
+                    voxels[x + CHUNK_SIZE * z + CHUNK_AREA * y] = rng
+
         if np.any(voxels):
             self.is_empty = False
+
         return voxels
