@@ -7,7 +7,7 @@ from main import VoxelEngine
 class Textures:
     def __init__(self, app: VoxelEngine):
         self.app = app
-        self.ctx = app.context
+        self.context = app.context
 
         # load texture
         self.texture_0 = self.load('frame.png')
@@ -19,7 +19,7 @@ class Textures:
         texture = pg.image.load(f'assets/{file_name}')
         texture = pg.transform.flip(texture, flip_x=True, flip_y=False)
 
-        texture = self.ctx.texture(
+        texture = self.context.texture(
             size=texture.get_size(),
             components=4,
             data=pg.image.tostring(texture, 'RGBA', False)

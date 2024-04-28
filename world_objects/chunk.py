@@ -1,4 +1,5 @@
 import glm
+from random import randrange
 
 from settings import *
 from main import VoxelEngine
@@ -47,7 +48,7 @@ class Chunk:
 
                 for y in range(local_height):
                     wy = y + cy
-                    voxels[x + CHUNK_SIZE * z + CHUNK_AREA * y] = wy + 1
+                    voxels[x + CHUNK_SIZE * z + CHUNK_AREA * y] = randrange(1,  100)
         if np.any(voxels):
             self.is_empty = False
         return voxels

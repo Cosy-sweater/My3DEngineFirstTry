@@ -18,6 +18,8 @@ class VoxelHandler:
 
         self.new_voxel_id = 1
 
+        self.marker_mode = 0
+
     def add_voxel(self):
         if self.voxel_id:
             # check voxel id along normal
