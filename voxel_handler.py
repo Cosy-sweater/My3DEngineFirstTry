@@ -1,5 +1,6 @@
 from settings import *
 from meshes.chunk_mesh_builder import get_chunk_index
+from random import randint
 
 
 class VoxelHandler:
@@ -15,7 +16,6 @@ class VoxelHandler:
         self.voxel_world_pos = None
         self.voxel_normal = None
 
-        self.interaction_mode = 0  # 0: remove voxel   1: add voxel
         self.new_voxel_id = 1
 
     def add_voxel(self):
@@ -26,7 +26,7 @@ class VoxelHandler:
             # is the new place empty?
             if not result[0]:
                 _, voxel_index, _, chunk = result
-                chunk.voxels[voxel_index] = self.new_voxel_id
+                chunk.voxels[voxel_index] = randint(0, 255)
                 chunk.mesh.rebuild()
 
                 # was it an empty chunk
@@ -65,13 +65,7 @@ class VoxelHandler:
             self.rebuild_adjacent_chunks()
 
     def set_voxel(self):
-        if self.interaction_mode:
-            self.add_voxel()
-        else:
-            self.remove_voxel()
-
-    def switch_mode(self):
-        self.interaction_mode = not self.interaction_mode
+        self.add_voxel()
 
     def update(self):
         self.ray_cast()
@@ -148,36 +142,3 @@ class VoxelHandler:
 
             return voxel_id, voxel_index, voxel_local_pos, chunk
         return 0, 0, 0, 0
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

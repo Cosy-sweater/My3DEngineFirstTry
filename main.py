@@ -71,7 +71,7 @@ class VoxelEngine:
     def handle_events(self) -> None:
         self.events = pg.event.get()
         for event in self.events:
-            if event.type == pg.QUIT or (event.type == pg.KEYDOWN and event.key == pg.K_ESCAPE):
+            if event.type == pg.QUIT or (event.type == pg.KEYDOWN and event.key == pg.K_F10):
                 self.is_running = False
             self.player.handle_event(event=event)
 
