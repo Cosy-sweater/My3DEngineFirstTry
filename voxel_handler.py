@@ -24,6 +24,8 @@ class VoxelHandler:
         if self.voxel_id:
             # check voxel id along normal
             result = self.get_voxel_id(self.voxel_world_pos + self.voxel_normal)
+            if (self.voxel_world_pos + self.voxel_normal).y < 0:
+                return
 
             # is the new place empty?
             if not result[0]:
@@ -141,6 +143,5 @@ class VoxelHandler:
 
             voxel_index = lx + CHUNK_SIZE * lz + CHUNK_AREA * ly
             voxel_id = chunk.voxels[voxel_index]
-
             return voxel_id, voxel_index, voxel_local_pos, chunk
         return 0, 0, 0, 0

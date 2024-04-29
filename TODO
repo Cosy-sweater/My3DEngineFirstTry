@@ -1,4 +1,0 @@
-replace 'from settings import *' sth better
-make settings.toml file
-
-fix bottom voxel of chunk missing

@@ -6,6 +6,13 @@ import math
 # resolution
 WIN_RES = glm.vec2(1600, 900)
 
+# rendering
+USE_GPU = True
+FPS_MAX = 200  # 0 -> inf; n -> n
+
+# world generation
+SEED = 16
+
 # ray casting
 MAX_RAY_DIST = 6
 
@@ -17,7 +24,7 @@ CHUNK_VOL = CHUNK_AREA * CHUNK_SIZE
 CHUNK_SPHERE_RADIUS = H_CHUNK_SIZE * math.sqrt(3)
 
 # world
-WORLD_W, WORLD_H = 10, 2
+WORLD_W, WORLD_H = 30, 2
 WORLD_D = WORLD_W
 WORLD_AREA = WORLD_W * WORLD_D
 WORLD_VOL = WORLD_AREA * WORLD_H
@@ -43,4 +50,24 @@ PLAYER_POS = glm.vec3(CENTER_XZ, WORLD_H * CHUNK_SIZE, CENTER_XZ)
 MOUSE_SENSITIVITY = 0.002
 
 # colors
-BG_COLOR = glm.vec3(0.1, 0.16, 0.25)
+BG_COLOR = glm.vec3(0.58, 0.83, 0.99)
+
+# blocks
+SAND = 1
+GRASS = 2
+DIRT = 3
+STONE = 4
+SNOW = 5
+LEAVES = 6
+WOOD = 7
+
+# terrain levels
+SNOW_LVL = 54
+STONE_LVL = 49
+DIRT_LVL = 40
+GRASS_LVL = 8
+SAND_LVL = 7
+
+TREE_PROBABILITY = 0.02
+TREE_WIDTH, TREE_HEIGHT = 4, 8
+TREE_H_WIDTH, TREE_H_HEIGHT = TREE_WIDTH // 2, TREE_HEIGHT // 2

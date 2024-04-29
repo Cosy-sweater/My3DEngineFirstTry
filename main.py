@@ -1,3 +1,5 @@
+import asyncio
+
 import pygame
 import moderngl as mgl
 import pygame as pg
@@ -16,6 +18,14 @@ if __name__ == '__main__':
     from player import Player
     from textures import Textures
 
+if USE_GPU:
+    import os
+    import ctypes
+
+    os.environ["__NV_PRIME_RENDER_OFFLOAD"] = "1"
+    os.environ["__GLX_VENDOR_LIBRARY_NAME"] = "nvidia"
+    ctypes.WinDLL('vcamp110')
+
 
 class VoxelEngine:
     def __init__(self) -> None:
@@ -31,6 +41,9 @@ class VoxelEngine:
         pg.display.gl_set_attribute(pg.GL_CONTEXT_MINOR_VERSION, 3)
         pg.display.gl_set_attribute(pg.GL_CONTEXT_PROFILE_MASK, pg.GL_CONTEXT_PROFILE_CORE)
         pg.display.gl_set_attribute(pg.GL_DEPTH_SIZE, 24)
+        pg.display.gl_set_attribute(pg.GL_STENCIL_SIZE, 8)
+        pg.display.gl_set_attribute(pg.GL_MULTISAMPLEBUFFERS, 1)
+        pg.display.gl_set_attribute(pg.GL_MULTISAMPLESAMPLES, 4)
 
         pg.display.set_mode(WIN_RES, flags=pygame.OPENGL | pg.DOUBLEBUF)
         self.context: mgl.Context = mgl.create_context()
@@ -58,7 +71,7 @@ class VoxelEngine:
         self.shader_program.update()
         self.scene.update()
 
-        self.delta_time = self.clock.tick()
+        self.delta_time = self.clock.tick(FPS_MAX)
         self.time = pg.time.get_ticks() * 0.001
 
         pg.display.set_caption(f"{str(int(self.clock.get_fps())): <10}{[round(x, 2) for x in self.player.position]}")
@@ -87,6 +100,11 @@ class VoxelEngine:
 
 def main() -> None:
     app = VoxelEngine()
+    ctx = app.context
+    print("Vendor:", ctx.info['GL_VENDOR'])
+    print("Renderer:", ctx.info['GL_RENDERER'])
+    print("OpenGL version:", ctx.info['GL_VERSION'])
+    print("ModernGL version:", mgl.__version__)
     app.run()
 
 
