@@ -7,11 +7,9 @@ uniform mat4 m_proj;
 uniform mat4 m_view;
 uniform mat4 m_model;
 
-out vec3 marker_color;
 out vec2 uv;
 
 void main(){
     uv = in_tex_coord_0;
-    marker_color = vec3(0.37, 0.96, 0.52);
     gl_Position = m_proj * m_view * m_model * vec4((in_position - 0.5) * 1.01 + 0.5, 1.0);
 }
