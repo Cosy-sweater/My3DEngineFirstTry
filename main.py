@@ -1,5 +1,3 @@
-import asyncio
-
 import pygame
 import moderngl as mgl
 import pygame as pg

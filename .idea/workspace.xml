@@ -7,18 +7,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ec3f541a-409a-4393-83aa-591f89ebd252" name="Changes" comment="pre_development_checkpoint_9">
-      <change afterPath="$PROJECT_DIR$/TODO.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TODO" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/meshes/base_mesh.py" beforeDir="false" afterPath="$PROJECT_DIR$/meshes/base_mesh.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/voxel_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/voxel_handler.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/world.py" beforeDir="false" afterPath="$PROJECT_DIR$/world.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/world_objects/chunk.py" beforeDir="false" afterPath="$PROJECT_DIR$/world_objects/chunk.py" afterDir="false" />
-    </list>
+    <list default="true" id="ec3f541a-409a-4393-83aa-591f89ebd252" name="Changes" comment="pre_development_checkpoint_10" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -224,7 +213,15 @@
       <option name="project" value="LOCAL" />
       <updated>1714388258363</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="pre_development_checkpoint_10">
+      <option name="closed" value="true" />
+      <created>1714405902800</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1714405902800</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -248,6 +245,7 @@
     <MESSAGE value="pre_development_checkpoint_7" />
     <MESSAGE value="pre_development_checkpoint_8" />
     <MESSAGE value="pre_development_checkpoint_9" />
-    <option name="LAST_COMMIT_MESSAGE" value="pre_development_checkpoint_9" />
+    <MESSAGE value="pre_development_checkpoint_10" />
+    <option name="LAST_COMMIT_MESSAGE" value="pre_development_checkpoint_10" />
   </component>
 </project>

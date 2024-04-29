@@ -24,7 +24,7 @@ class Chunk:
     def set_uniform(self):
         self.mesh.program['m_model'].write(self.m_model)
 
-    async def build_mesh(self):
+    def build_mesh(self):
         self.mesh = ChunkMesh(self)
 
     def render(self):
