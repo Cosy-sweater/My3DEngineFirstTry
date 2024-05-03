@@ -1,4 +1,4 @@
-from settings import *
+from constants import *
 from meshes.chunk_mesh import ChunkMesh
 import random
 from terrain_gen import *
@@ -48,15 +48,19 @@ class Chunk:
     @staticmethod
     @njit
     def generate_terrain(voxels, cx, cy, cz):
-        for x in range(CHUNK_SIZE):
-            wx = x + cx
-            for z in range(CHUNK_SIZE):
-                wz = z + cz
-                world_height = get_height(wx, wz)
-                local_height = min(world_height - cy, CHUNK_SIZE)
-                # if local_height < 0:
-                #     print(local_height)
+        if TEST_WORLD:
+            for n in range(100):
+                voxels[get_index(2*(n%10), 0, 2*(n//10))] = n
+        else:
+            for x in range(CHUNK_SIZE):
+                wx = x + cx
+                for z in range(CHUNK_SIZE):
+                    wz = z + cz
+                    world_height = get_height(wx, wz)
+                    local_height = min(world_height - cy, CHUNK_SIZE)
+                    # if local_height < 0:
+                    #     print(local_height)
 
-                for y in range(local_height):
-                    wy = y + cy
-                    set_voxel_id(voxels, x, y, z, wx, wy, wz, world_height)
+                    for y in range(local_height):
+                        wy = y + cy
+                        set_voxel_id(voxels, x, y, z, wx, wy, wz, world_height)

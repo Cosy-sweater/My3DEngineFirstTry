@@ -1,4 +1,4 @@
-from settings import *
+from constants import *
 from meshes.base_mesh import BaseMesh
 
 

@@ -7,7 +7,27 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ec3f541a-409a-4393-83aa-591f89ebd252" name="Changes" comment="pre_development_checkpoint_10" />
+    <list default="true" id="ec3f541a-409a-4393-83aa-591f89ebd252" name="Changes" comment="pre_development_checkpoint_10.1">
+      <change beforePath="$PROJECT_DIR$/.idea/My3DEngineFirstTry.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/My3DEngineFirstTry.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/camera.py" beforeDir="false" afterPath="$PROJECT_DIR$/camera.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frustum.py" beforeDir="false" afterPath="$PROJECT_DIR$/frustum.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/meshes/chunk_mesh_builder.py" beforeDir="false" afterPath="$PROJECT_DIR$/meshes/chunk_mesh_builder.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/meshes/cube_mesh.py" beforeDir="false" afterPath="$PROJECT_DIR$/meshes/cube_mesh.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/meshes/quad_mesh.py" beforeDir="false" afterPath="$PROJECT_DIR$/meshes/quad_mesh.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/noise.py" beforeDir="false" afterPath="$PROJECT_DIR$/noise.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/player.py" beforeDir="false" afterPath="$PROJECT_DIR$/player.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scene.py" beforeDir="false" afterPath="$PROJECT_DIR$/scene.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/constants.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shader_program.py" beforeDir="false" afterPath="$PROJECT_DIR$/shader_program.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/terrain_gen.py" beforeDir="false" afterPath="$PROJECT_DIR$/terrain_gen.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/voxel_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/voxel_handler.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/world.py" beforeDir="false" afterPath="$PROJECT_DIR$/world.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/world_objects/chunk.py" beforeDir="false" afterPath="$PROJECT_DIR$/world_objects/chunk.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/world_objects/voxel_marker.py" beforeDir="false" afterPath="$PROJECT_DIR$/world_objects/voxel_marker.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -56,6 +76,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Python.main.executor": "Run",
+    "Python.settings (1).executor": "Run",
     "Python.settings.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -63,7 +84,7 @@
     "ignore.virus.scanning.warn.message": "true",
     "last_opened_file_path": "C:/Users/VladNB/PycharmProjects/My3DEngineFirstTry",
     "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "editing.templates"
+    "settings.editor.selected.configurable": "reference.settings.project.statistic.project.settings"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -81,7 +102,7 @@
       <recent name="C:\Users\belov\PycharmProjects\My3DEngineFirstTry" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.main">
+  <component name="RunManager" selected="Python.settings (1)">
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="My3DEngineFirstTry" />
       <option name="ENV_FILES" value="" />
@@ -96,6 +117,28 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="settings (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="My3DEngineFirstTry" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/settings.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -128,6 +171,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.settings (1)" />
         <item itemvalue="Python.main" />
       </list>
     </recent_temporary>
@@ -221,7 +265,15 @@
       <option name="project" value="LOCAL" />
       <updated>1714405902800</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="pre_development_checkpoint_10.1">
+      <option name="closed" value="true" />
+      <created>1714406564027</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1714406564027</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -246,6 +298,19 @@
     <MESSAGE value="pre_development_checkpoint_8" />
     <MESSAGE value="pre_development_checkpoint_9" />
     <MESSAGE value="pre_development_checkpoint_10" />
-    <option name="LAST_COMMIT_MESSAGE" value="pre_development_checkpoint_10" />
+    <MESSAGE value="pre_development_checkpoint_10.1" />
+    <option name="LAST_COMMIT_MESSAGE" value="pre_development_checkpoint_10.1" />
+  </component>
+  <component name="com.gk646.codestats.settings.Save">
+    <option name="genericTimePoints">
+      <list>
+        <TimePoint>
+          <option name="timestamp" value="1714738674768" />
+          <option name="linesCode" value="689017" />
+          <option name="totalLines" value="1362423" />
+          <option name="info" value="3 мая 2024 г." />
+        </TimePoint>
+      </list>
+    </option>
   </component>
 </project>

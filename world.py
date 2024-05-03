@@ -1,4 +1,4 @@
-from settings import *
+from constants import *
 from world_objects.chunk import Chunk
 from voxel_handler import VoxelHandler
 
@@ -29,6 +29,7 @@ class World:
 
                     # get pointer to voxels
                     chunk.voxels = self.voxels[chunk_index]
+        print(234)
 
     def build_chunk_mesh(self):
         for chunk in self.chunks:

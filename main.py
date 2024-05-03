@@ -5,7 +5,7 @@ import pygame as pg
 import sys
 from typing import NoReturn
 
-from settings import *
+from constants import *
 
 # эта строка позволяет импортировать VoxelEngine для типовых аннотаций в других файлах без создания
 # кругового импортирования
@@ -15,6 +15,7 @@ if __name__ == '__main__':
     from scene import Scene
     from player import Player
     from textures import Textures
+    from settings import Settings
 
 if USE_GPU:
     import os
@@ -32,6 +33,7 @@ class VoxelEngine:
         self.player = None
         self.shader_program = None
         self.scene = None
+        self.settings = None
         #
 
         pg.init()
@@ -54,7 +56,7 @@ class VoxelEngine:
         self.time: float = 0
         self.events: list[pygame.event.Event] = []
 
-        self.is_running: bool = True
+        self.is_running: bool = False
 
         self.on_init()
 
@@ -63,13 +65,14 @@ class VoxelEngine:
         self.player = Player(self)
         self.shader_program: shader_program.ShaderProgram = ShaderProgram(self)
         self.scene = Scene(self)
+        self.settings = Settings()
 
     def update(self) -> None:
         self.player.update()
         self.shader_program.update()
         self.scene.update()
 
-        self.delta_time = self.clock.tick(FPS_MAX)
+        self.delta_time = self.clock.tick(FPS_MAX) * GAME_SPEED
         self.time = pg.time.get_ticks() * 0.001
 
         pg.display.set_caption(f"{str(int(self.clock.get_fps())): <10}{[round(x, 2) for x in self.player.position]}")
@@ -87,6 +90,7 @@ class VoxelEngine:
             self.player.handle_event(event=event)
 
     def run(self) -> NoReturn:
+        self.is_running = True
         while self.is_running:
             self.handle_events()
             self.update()

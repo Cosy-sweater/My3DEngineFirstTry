@@ -1,4 +1,4 @@
-from settings import *
+from constants import *
 from meshes.chunk_mesh_builder import get_chunk_index
 from random import randint
 
