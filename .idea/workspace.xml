@@ -7,26 +7,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ec3f541a-409a-4393-83aa-591f89ebd252" name="Changes" comment="pre_development_checkpoint_10.1">
-      <change beforePath="$PROJECT_DIR$/.idea/My3DEngineFirstTry.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/My3DEngineFirstTry.iml" afterDir="false" />
+    <list default="true" id="ec3f541a-409a-4393-83aa-591f89ebd252" name="Changes" comment="alpha_1.0">
+      <change afterPath="$PROJECT_DIR$/test_texture_pack/pack_data.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TODO.md" beforeDir="false" afterPath="$PROJECT_DIR$/TODO.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/tex_array_0.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/tex_array_0.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/camera.py" beforeDir="false" afterPath="$PROJECT_DIR$/camera.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frustum.py" beforeDir="false" afterPath="$PROJECT_DIR$/frustum.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/constants.py" beforeDir="false" afterPath="$PROJECT_DIR$/constants.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/meshes/chunk_mesh_builder.py" beforeDir="false" afterPath="$PROJECT_DIR$/meshes/chunk_mesh_builder.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/meshes/cube_mesh.py" beforeDir="false" afterPath="$PROJECT_DIR$/meshes/cube_mesh.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/meshes/quad_mesh.py" beforeDir="false" afterPath="$PROJECT_DIR$/meshes/quad_mesh.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/noise.py" beforeDir="false" afterPath="$PROJECT_DIR$/noise.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/player.py" beforeDir="false" afterPath="$PROJECT_DIR$/player.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scene.py" beforeDir="false" afterPath="$PROJECT_DIR$/scene.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/constants.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shader_program.py" beforeDir="false" afterPath="$PROJECT_DIR$/shader_program.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/terrain_gen.py" beforeDir="false" afterPath="$PROJECT_DIR$/terrain_gen.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/paths.py" beforeDir="false" afterPath="$PROJECT_DIR$/paths.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shaders/chunk.frag" beforeDir="false" afterPath="$PROJECT_DIR$/shaders/chunk.frag" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_texture_pack/textures_list.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/textures.py" beforeDir="false" afterPath="$PROJECT_DIR$/textures.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/voxel_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/voxel_handler.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/world.py" beforeDir="false" afterPath="$PROJECT_DIR$/world.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/world_objects/chunk.py" beforeDir="false" afterPath="$PROJECT_DIR$/world_objects/chunk.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/world_objects/voxel_marker.py" beforeDir="false" afterPath="$PROJECT_DIR$/world_objects/voxel_marker.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,6 +38,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
   &quot;lastFilter&quot;: {
@@ -73,20 +69,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Python.main.executor": "Run",
-    "Python.settings (1).executor": "Run",
-    "Python.settings.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/VladNB/PycharmProjects/My3DEngineFirstTry",
-    "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "reference.settings.project.statistic.project.settings"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python.main.executor&quot;: &quot;Run&quot;,
+    &quot;Python.settings (1).executor&quot;: &quot;Run&quot;,
+    &quot;Python.settings.executor&quot;: &quot;Run&quot;,
+    &quot;Python.texture_array_builder.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/VladNB/PycharmProjects/My3DEngineFirstTry&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.statistic.project.settings&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\VladNB\PycharmProjects\My3DEngineFirstTry" />
@@ -102,7 +99,7 @@
       <recent name="C:\Users\belov\PycharmProjects\My3DEngineFirstTry" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.settings (1)">
+  <component name="RunManager" selected="Python.main">
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="My3DEngineFirstTry" />
       <option name="ENV_FILES" value="" />
@@ -169,10 +166,33 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="texture_array_builder" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="My3DEngineFirstTry" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/texture_array_builder.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.settings (1)" />
         <item itemvalue="Python.main" />
+        <item itemvalue="Python.texture_array_builder" />
+        <item itemvalue="Python.settings (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -273,7 +293,23 @@
       <option name="project" value="LOCAL" />
       <updated>1714406564027</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="alpha_1.0">
+      <option name="closed" value="true" />
+      <created>1714739185356</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1714739185356</updated>
+    </task>
+    <task id="LOCAL-00013" summary="alpha_1.0">
+      <option name="closed" value="true" />
+      <created>1714739245294</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1714739245294</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -299,15 +335,32 @@
     <MESSAGE value="pre_development_checkpoint_9" />
     <MESSAGE value="pre_development_checkpoint_10" />
     <MESSAGE value="pre_development_checkpoint_10.1" />
-    <option name="LAST_COMMIT_MESSAGE" value="pre_development_checkpoint_10.1" />
+    <MESSAGE value="alpha_1.0" />
+    <option name="LAST_COMMIT_MESSAGE" value="alpha_1.0" />
   </component>
   <component name="com.gk646.codestats.settings.Save">
+    <option name="commitTimePoints">
+      <list>
+        <TimePoint>
+          <option name="timestamp" value="1714739185764" />
+          <option name="linesCode" value="689015" />
+          <option name="totalLines" value="1362418" />
+          <option name="info" value="alpha_1.0" />
+        </TimePoint>
+        <TimePoint>
+          <option name="timestamp" value="1714739245703" />
+          <option name="linesCode" value="689015" />
+          <option name="totalLines" value="1362418" />
+          <option name="info" value="alpha_1.0" />
+        </TimePoint>
+      </list>
+    </option>
     <option name="genericTimePoints">
       <list>
         <TimePoint>
-          <option name="timestamp" value="1714738674768" />
-          <option name="linesCode" value="689017" />
-          <option name="totalLines" value="1362423" />
+          <option name="timestamp" value="1714739245703" />
+          <option name="linesCode" value="689015" />
+          <option name="totalLines" value="1362418" />
           <option name="info" value="3 мая 2024 г." />
         </TimePoint>
       </list>

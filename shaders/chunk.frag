@@ -17,7 +17,7 @@ flat in int face_id;
 
 void main(){
     vec2 face_uv = uv;
-    face_uv.x = uv.x / 3.0 - min(face_id, 2) / 3.0;
+    face_uv.x = uv.x / 6.0 - min(face_id, 2) / 6.0;
 
     float tex_alpha = texture(u_texture_array_0, vec3(face_uv, voxel_id)).a;
     vec3 tex_col = texture(u_texture_array_0, vec3(face_uv, voxel_id)).rgb;

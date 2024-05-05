@@ -15,7 +15,7 @@ if __name__ == '__main__':
     from scene import Scene
     from player import Player
     from textures import Textures
-    from settings import Settings
+    import settings
 
 if USE_GPU:
     import os
@@ -65,7 +65,7 @@ class VoxelEngine:
         self.player = Player(self)
         self.shader_program: shader_program.ShaderProgram = ShaderProgram(self)
         self.scene = Scene(self)
-        self.settings = Settings()
+        self.settings = settings.load_settings()
 
     def update(self) -> None:
         self.player.update()

@@ -88,6 +88,9 @@ class PlayerCamera(Camera):
     def move_back(self):
         self.player_vel -= glm.normalize(self.forward * glm.vec3(1, 0, 1)) * PLAYER_ACCELERATION * self.app.delta_time
 
+    def move_down(self):
+        self.position.y -= 0.2
+
     def update(self):
         deltatime = self.app.delta_time
         super().update()

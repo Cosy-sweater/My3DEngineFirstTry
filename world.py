@@ -2,6 +2,8 @@ from constants import *
 from world_objects.chunk import Chunk
 from voxel_handler import VoxelHandler
 
+import rays
+
 
 class World:
     def __init__(self, app):
@@ -11,6 +13,7 @@ class World:
         self.build_chunks()
         self.build_chunk_mesh()
         self.voxel_handler = VoxelHandler(self)
+        rays.init_ray_casting(self)
 
     def update(self):
         self.voxel_handler.update()
@@ -29,7 +32,6 @@ class World:
 
                     # get pointer to voxels
                     chunk.voxels = self.voxels[chunk_index]
-        print(234)
 
     def build_chunk_mesh(self):
         for chunk in self.chunks:

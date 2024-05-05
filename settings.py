@@ -1,17 +1,24 @@
 import tomli
-import tomli_w
+import pathlib
 from box import Box
+
 import paths
 
 
-class Settings(Box):
-    def __init__(self, *args, settings_path=paths.get_resource_path(), **kwargs):
-        super().__init__(*args, **kwargs)
-        self._file_path = settings_path
-        self.reload_settings()
+def load_settings(settings_path=None) -> Box:
+    if not settings_path:
+        settings_path = paths.get_working_directory_path() + r"\settings.toml"
 
-    def reload_settings(self):
-        with open(self._file_path + r"\settings.toml", "rb") as f:
-            data = tomli.load(f)
-        super().__init__(data)
+    with open(settings_path, 'rb') as f:
+        settings_data = tomli.load(f)
 
+    settings = Box(settings_data)
+    return settings
+
+
+def save_settings(settings, settings_path: str = None) -> None:
+    if not settings_path:
+        settings_path = paths.get_working_directory_path()
+
+    with open(settings_path, 'wb') as f:
+        tomli.dump(settings.to_dict(), f)
