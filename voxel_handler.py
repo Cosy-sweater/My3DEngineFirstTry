@@ -18,13 +18,13 @@ class VoxelHandler:
         self.voxel_world_pos = None
         self.voxel_normal = None
 
-        self.new_voxel_id = 1
+        self.new_voxel_id = 5
 
         self.marker_mode = 0
 
         # self.ray_cast = rays.ray_cast
 
-    def add_voxel(self):
+    def place_voxel(self):
         if self.voxel_id:
             # check voxel id along normal
             result = rays.get_voxel_id(self.voxel_world_pos + self.voxel_normal)
@@ -34,7 +34,7 @@ class VoxelHandler:
             # is the new place empty?
             if not result[0]:
                 _, voxel_index, _, chunk = result
-                chunk.voxels[voxel_index] = 1
+                chunk.voxels[voxel_index] = self.new_voxel_id
                 chunk.mesh.rebuild()
 
                 # was it an empty chunk
@@ -72,10 +72,6 @@ class VoxelHandler:
             self.chunk.mesh.rebuild()
             self.rebuild_adjacent_chunks()
 
-    def set_voxel(self):
-        self.add_voxel()
-
     def update(self):
         rc = rays.ray_cast(self.app.player.position, self.app.player.position + self.app.player.forward * MAX_RAY_DIST)
         self.voxel_id, self.voxel_index, self.voxel_local_pos, self.chunk, self.voxel_normal, self.voxel_world_pos = rc
-

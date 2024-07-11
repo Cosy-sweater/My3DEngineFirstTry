@@ -4,6 +4,7 @@ import pygame as pg
 import custom_vec_functions
 from constants import *
 from frustum import Frustum
+from signals import PlayerBlockPlaced, PlayerBlockRemoved
 
 
 class Camera:
@@ -70,7 +71,7 @@ class PlayerCamera(Camera):
 
         self.lock_mouse = False
 
-        self.player_vel = glm.vec3(0, 0, 1)
+        self.player_vel = glm.vec3(0, 0, 0)
         self.min_vel = 0.1  # Минимальное значение для вектора скорости
 
     def move_player(self):
@@ -89,7 +90,10 @@ class PlayerCamera(Camera):
         self.player_vel -= glm.normalize(self.forward * glm.vec3(1, 0, 1)) * PLAYER_ACCELERATION * self.app.delta_time
 
     def move_down(self):
-        self.position.y -= 0.2
+        self.position.y -= 0.02 * self.app.delta_time
+
+    def move_up(self):
+        self.position.y += 0.02 * self.app.delta_time
 
     def update(self):
         deltatime = self.app.delta_time
@@ -137,9 +141,10 @@ class PlayerCamera(Camera):
         if event.type == pg.MOUSEBUTTONDOWN:
             voxel_handler = self.app.scene.world.voxel_handler
             if event.button == 3:
-                voxel_handler.set_voxel()
+                # voxel_handler.set_voxel()
+                self.app.add_signal(PlayerBlockPlaced())
             if event.button == 1:
-                voxel_handler.remove_voxel()
+                self.app.add_signal(PlayerBlockRemoved())
 
     def mouse_control(self):
         mouse_dx, mouse_dy = pg.mouse.get_rel()

@@ -15,7 +15,9 @@ if __name__ == '__main__':
     from scene import Scene
     from player import Player
     from textures import Textures
+    from dev_pannel import DevPannel
     import settings
+    import signals
 
 if USE_GPU:
     import os
@@ -34,6 +36,7 @@ class VoxelEngine:
         self.shader_program = None
         self.scene = None
         self.settings = None
+        self.dev_pannel = None
         #
 
         pg.init()
@@ -45,6 +48,7 @@ class VoxelEngine:
         pg.display.gl_set_attribute(pg.GL_MULTISAMPLEBUFFERS, 1)
         pg.display.gl_set_attribute(pg.GL_MULTISAMPLESAMPLES, 4)
 
+        os.environ['SDL_VIDEO_WINDOW_POS'] = "%d,%d" % (20, 60) # позиционирование окна на экране
         pg.display.set_mode(WIN_RES, flags=pygame.OPENGL | pg.DOUBLEBUF)
         self.context: mgl.Context = mgl.create_context()
 
@@ -55,8 +59,10 @@ class VoxelEngine:
         self.delta_time: int = 0
         self.time: float = 0
         self.events: list[pygame.event.Event] = []
+        self.signal_queue: list[signals.Signal] = []
 
         self.is_running: bool = False
+        self.is_paused: bool = False
 
         self.on_init()
 
@@ -66,16 +72,20 @@ class VoxelEngine:
         self.shader_program: shader_program.ShaderProgram = ShaderProgram(self)
         self.scene = Scene(self)
         self.settings = settings.load_settings()
+        self.dev_pannel = DevPannel(self)
 
     def update(self) -> None:
         self.player.update()
         self.shader_program.update()
-        self.scene.update()
 
         self.delta_time = self.clock.tick(FPS_MAX) * GAME_SPEED
         self.time = pg.time.get_ticks() * 0.001
 
         pg.display.set_caption(f"{str(int(self.clock.get_fps())): <10}{[round(x, 2) for x in self.player.position]}")
+
+        self.parse_signals()
+
+        self.scene.update()
 
     def render(self) -> None:
         self.context.clear(color=BG_COLOR)
@@ -91,13 +101,26 @@ class VoxelEngine:
 
     def run(self) -> NoReturn:
         self.is_running = True
+        self.is_paused = False
         while self.is_running:
             self.handle_events()
-            self.update()
+            self.dev_pannel.update()
+            if not self.is_paused:
+                self.update()
             self.render()
 
         pg.quit()
         sys.exit()
+
+    def add_signal(self, signal):
+        self.signal_queue.append(signal)
+
+    def parse_signals(self):
+        for signal in self.signal_queue:
+            signal.execute(self)
+            print(f"Выполнен сигнал {signal.__class__.__name__}({signal.__dict__}")
+
+        self.signal_queue.clear()
 
 
 def main() -> None:
